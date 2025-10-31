@@ -1,0 +1,53 @@
+{% extend "base.html" %}
+
+{% block content %}
+    <h1> Registro de Atendimentos</h1>
+
+    <h2>Registro Novo Atendimento</h2>
+    <form id="form-atendimento">
+        <div class="form-group">
+            <label for="select-cliente">Clientes</label>
+            <select name="cliente_id" id="select-cliente" required>
+                <option value=""> Carregando Clientes</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="select-servico">Serviços</label>
+            <select name="servico_id" id="select-servico" required>
+                <option value=""> Carregando Serviços</option>
+            </select>
+        </div>
+        <div class="form-group full-width">
+            <label for="Observacoes">Observação</label>
+            <textarea name="Observacoes" id="Observacoes"></textarea>
+        </div>
+        <div class="form-group full-width">
+            <label for="Observacoes">Observação</label>
+            <textarea name="Observacoes" id="Observacoes"></textarea>
+        </div>
+        <div class="form-group full-width">
+            <button type="submit" class="btn-primary">Registrar Atendimento</button>
+        </div>
+        
+    </form>
+
+    <h2>Atendimentos Registrados </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Cliente</th>
+                <th>Serviço</th>
+                <th>Valor</th>
+                <th>Obs.</th>
+                <th class="actions">Ações</th>
+            </tr>
+        </thead>
+        <tbody id="lista-atendimentos"></tbody>7
+    </table>
+    {%block script%}
+        <script src="{{url_for('static', filename='js/Atendimentos.js')}}" defer></script>
+    {%endblock%}
+{%endblock%}
+
